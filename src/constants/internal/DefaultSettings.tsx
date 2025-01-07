@@ -137,7 +137,7 @@ export const DefaultSettings: Settings = {
 	},
 	footer: {
 		text: (
-			<div style={{cursor: "pointer", display: "flex", flexDirection: "row", alignItems: "center", columnGap: 3}} 
+			<div style={{cursor: "pointer", display: "flex", flexDirection: "row", alignItems: "center", columnGap: 3}}
 				onClick={() => window.open("https://react-chatbotify.com")}
 			>
 				<span key={0}>Powered By </span>
@@ -155,7 +155,7 @@ export const DefaultSettings: Settings = {
 				>
 					<ChatIcon style={{ width: "80%", height: "80%", fill: "#fff" }} />
 				</div>
-				<span key={2} style={{fontWeight: "bold"}}> React ChatBotify</span>
+				<span key={2} style={{fontWeight: "bold"}}> Zingaro Ai</span>
 			</div>
 		),
 		buttons: [Button.FILE_ATTACHMENT_BUTTON, Button.EMOJI_PICKER_BUTTON]

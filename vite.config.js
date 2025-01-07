@@ -6,9 +6,9 @@ import eslint from "vite-plugin-eslint2";
 import { defineConfig, loadEnv } from "vite";
 
 export default ({mode}) => {
-  
+
   process.env = {...process.env, ...loadEnv(mode, process.cwd())};
-  
+
   return defineConfig({
     root: "src",
     build: {

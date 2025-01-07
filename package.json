@@ -38,7 +38,8 @@
     "unit:test:coverage": "jest --coverage __tests__/",
     "int:test:open": "cypress open",
     "int:test": "cypress run",
-    "validate:ssr": "node ./ssr/ssr-validate.js"
+    "validate:ssr": "node ./ssr/ssr-validate.js",
+    "build:widget": "vite build --config vite.chatwidget.config.js"
   },
   "author": "tjtanjin",
   "license": "MIT",
@@ -75,7 +76,7 @@
     "ts-jest": "^29.2.5",
     "typescript": "^5.1.6",
     "vite": "^4.5.2",
-    "vite-plugin-eslint2": "^4.4.2",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
     "vite-plugin-svgr": "^3.2.0"
   },
   "browserslist": {
@@ -89,5 +90,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "vite-plugin-eslint2": "^5.0.3"
   }
 }
