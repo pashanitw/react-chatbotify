@@ -254,6 +254,7 @@ const ChatBotBody = ({
 				</div>
 			)}
 			<ChatMessagePrompt />
+			
 			<CustomComponent />
 		</div>
 	);
