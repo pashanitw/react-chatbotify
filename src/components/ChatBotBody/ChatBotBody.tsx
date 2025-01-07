@@ -10,6 +10,7 @@ import { useStylesContext } from "../../context/StylesContext";
 import { Message } from "../../types/Message";
 
 import "./ChatBotBody.css";
+import DynamicForm from "../../DynamicForm";
 
 /**
  * Contains chat messages between the user and bot.
@@ -203,12 +204,18 @@ const ChatBotBody = ({
 			</div>
 		);
 	};
-	
+
+
+	const CustomComponent = () => {
+		return <DynamicForm />
+	}
+
+
 	return (
-		<div 
+		<div
 			style={bodyStyle}
 			className="rcb-chat-body-container"
-			ref={chatBodyRef as React.LegacyRef<HTMLDivElement>} 
+			ref={chatBodyRef as React.LegacyRef<HTMLDivElement>}
 			onScroll={updateIsScrolling}
 		>
 			{messages.map((message, index) => {
@@ -227,26 +234,27 @@ const ChatBotBody = ({
 			{isBotTyping && (
 				<div className="rcb-bot-message-container">
 					{settings.botBubble?.showAvatar &&
-						<div 
-							style={{backgroundImage: `url(${settings.botBubble?.avatar})`}}
+						<div
+							style={{ backgroundImage: `url(${settings.botBubble?.avatar})` }}
 							className="rcb-message-bot-avatar"
 						/>
 					}
-					<div 
+					<div
 						onMouseDown={(event: MouseEvent) => {
 							event.preventDefault();
 						}}
 						className={`rcb-bot-message ${botBubbleEntryStyle}`}
 					>
-						<div className="rcb-typing-indicator" style={{...styles?.rcbTypingIndicatorContainerStyle}}>
-							<span className="rcb-dot" style={{...styles?.rcbTypingIndicatorDotStyle}}/>
-							<span className="rcb-dot" style={{...styles?.rcbTypingIndicatorDotStyle}}/>
-							<span className="rcb-dot" style={{...styles?.rcbTypingIndicatorDotStyle}}/>
+						<div className="rcb-typing-indicator" style={{ ...styles?.rcbTypingIndicatorContainerStyle }}>
+							<span className="rcb-dot" style={{ ...styles?.rcbTypingIndicatorDotStyle }} />
+							<span className="rcb-dot" style={{ ...styles?.rcbTypingIndicatorDotStyle }} />
+							<span className="rcb-dot" style={{ ...styles?.rcbTypingIndicatorDotStyle }} />
 						</div>
 					</div>
 				</div>
 			)}
-			<ChatMessagePrompt/>
+			<ChatMessagePrompt />
+			<CustomComponent />
 		</div>
 	);
 };

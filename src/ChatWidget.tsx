@@ -1,7 +1,7 @@
 /* eslint-disable */
-
 import React from "react";
 import ChatBot from "./components/ChatBot";
+import DynamicForm from "./DynamicForm";
 
 
 const Chatbot = () => {
@@ -11,7 +11,7 @@ const Chatbot = () => {
             path: "process_message",
         },
         process_message: {
-            message: async (params:any) => {
+            message: async (params: any) => {
                 const userInput = params.userInput;
                 try {
                     const response = await fetch("http://localhost:8000/api/chat", {
@@ -19,7 +19,7 @@ const Chatbot = () => {
                         headers: {
                             "Content-Type": "application/json",
                         },
-                        body: JSON.stringify({message: userInput}),
+                        body: JSON.stringify({ message: userInput }),
                     });
                     const data = await response.json();
                     return data.response || "Sorry, I didn't understand that.";
@@ -38,7 +38,7 @@ const Chatbot = () => {
     ];
 
     return (
-        <div style={{maxWidth: "400px", margin: "auto"}}>
+        <div style={{ maxWidth: "400px", margin: "auto" }}>
             <ChatBot
                 themes={themes}
                 styles={{
